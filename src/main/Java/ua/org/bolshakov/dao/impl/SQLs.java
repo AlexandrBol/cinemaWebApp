@@ -10,12 +10,8 @@ public class SQLs {
     public static  final String INSERT_MOVIE = "Insert into movie (title, description, duration, rent_start, rent_end, genre, rating) values (?,?,?,?,?,?,?)";
     public static  final String UPDATE_MOVIE = "UPDATE movie SET title = ?, description = ?, duration = ?, rent_start = ?, rent_end = ?, genre = ?, rating = ?, WHERE id = ?";
 
-    public static  final String UPDATE_USER = "UPDATE user SET login = ?, password = ?, first_name = ?, last_name = ?, email = ?, sex = ?, birthday = ?, role_id = ?, WHERE id = ?";
+   public static  final String UPDATE_USER = "UPDATE user SET login = ?, password = ?, first_name = ?, last_name = ?, email = ?, sex = ?, birthday = ?, role_id = ?, WHERE id = ?";
     public static  final String INSERT_USER = "Insert into user (login, password, first_name, last_name, email, sex, birthday, role_id) values (?,?,?,?,?,?,?,?)";
-
-    public static  final String INSERT_HALL= "Insert into hall (name =? , place ) values (?,?,?,?,?,?,?)";
-    public static  final String UPDATE_HALL = "UPDATE movie SET title = ?, description = ?, duration = ?, rent_start = ?, rent_end = ?, genre = ?, rating = ?, WHERE id = ?";
-
 
 
 }

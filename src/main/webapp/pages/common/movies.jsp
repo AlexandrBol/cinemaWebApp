@@ -3,10 +3,10 @@
 <html>
 <head>
     <title>Title</title>
-    <jsp:include page="../tmpl/headtag.jspx" />
+    <jsp:include page="../tmpl/headtag.jsp" />
 </head>
 <body>
-<jsp:include page="../tmpl/head.jspx" />
+<jsp:include page="../tmpl/head.jsp" />
 <center>
 <c:forEach items="${movieDTOList}" var="movies">
 <a href="${pageContext.servletContext.contextPath}/movie?id=${movies.id}">${movies.title}</a><br/>

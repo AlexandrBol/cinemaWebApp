@@ -6,7 +6,6 @@ import ua.org.bolshakov.dto.UserDTO;
 import ua.org.bolshakov.mapper.BeanMapper;
 import ua.org.bolshakov.model.User;
 import ua.org.bolshakov.service.api.Service;
-
 import java.util.List;
 
 public class UserServiceImpl implements Service<Integer, UserDTO> {

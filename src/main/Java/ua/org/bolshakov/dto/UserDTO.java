@@ -28,7 +28,7 @@ public class UserDTO extends Entity<Integer> {
         this.role = roleDTO;
     }
 
-    public String getLogin() {
+        public String getLogin() {
             return login;
         }
 
