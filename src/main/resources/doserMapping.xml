@@ -2,7 +2,8 @@
 <mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
     <mapping>
-        <class-a>ua.org.oa.evlashdv.model.Role</class-a>
-        <class-b>ua.org.oa.evlashdv.dto.RoleDTO</class-b>
+        <class-a>ua.org.bolshakov.model.Role</class-a>
+        <class-b>ua.org.bolshakov.dto.RoleDTO</class-b>
+
     </mapping>
 </mappings>
