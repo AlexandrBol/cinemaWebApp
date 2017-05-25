@@ -45,6 +45,7 @@
           <element id="library" level="project" name="Maven: commons-logging:commons-logging:1.1.1" />
           <element id="library" level="project" name="Maven: org.apache.cassandra:cassandra-thrift:0.8.1" />
           <element id="library" level="project" name="Maven: com.github.stephenc:jamm:0.2.2" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-nop:1.7.13" />
         </element>
       </element>
       <element id="directory" name="META-INF">
