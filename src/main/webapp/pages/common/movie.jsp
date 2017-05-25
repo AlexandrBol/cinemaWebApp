@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Title</title>
+    <title><c:out value="${movieDTO.title}" default="err"/></title>
 </head>
 
 <body>

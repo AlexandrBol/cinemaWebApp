@@ -4,12 +4,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="pages/tmpl/headtag.jspx" />
+    <jsp:include page="pages/tmpl/headtag.jsp" />
     <title>Login</title>
 </head>
 
 <body>
-<jsp:include page="pages/tmpl/head.jspx" />
+<jsp:include page="pages/tmpl/head.jsp" />
 
 <h2>LOL</h2>
 <br>

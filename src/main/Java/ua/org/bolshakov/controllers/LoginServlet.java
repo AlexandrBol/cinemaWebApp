@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @WebServlet(name = "LoginServlet", urlPatterns={"/login"})
 public class LoginServlet extends HttpServlet {
@@ -21,9 +19,16 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("pages/common/login.jsp").forward(request, response);
         if(userDTO != null && userDTO.getPassword().equals(password)){
             request.getSession().setAttribute("user", userDTO);
-            response.sendRedirect(request.getSession().getAttribute("/pages/admin/admin.jsp").toString());
+            if(userDTO != null && userDTO.getRole().equals("Admin")){
+                response.sendRedirect(request.getContextPath() + "/pages/admin/admin.jsp");;
 
-        }else{
+            }
+            if(userDTO != null && userDTO.getRole().equals("User")){
+                response.sendRedirect(request.getContextPath() + "/pages/user/user.jsp");;
+
+            }
+        }
+        else{
             request.getSession().setAttribute("message", "Wrong users name or password");
             response.sendRedirect(request.getContextPath() + "/login");
         }
