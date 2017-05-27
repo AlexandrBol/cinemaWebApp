@@ -1,9 +1,11 @@
 package ua.org.bolshakov.dao.impl;
 
 import ua.org.bolshakov.dao.DaoFactory;
+import ua.org.bolshakov.dto.MovieDTO;
 import ua.org.bolshakov.model.User;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -60,4 +62,5 @@ public class UserDaoImpl extends CrudDAO<User> {
         }
         return result;
     }
+
 }

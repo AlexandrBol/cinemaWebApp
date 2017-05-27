@@ -22,8 +22,8 @@ public class Time extends HttpServlet {
                 name = cookie.getValue();
             }
         }
-        Cookie cookie = new Cookie("name", "Vasya");
-        response.addCookie(cookie);
+       // Cookie cookie = new Cookie("name", "Vasya");
+      //  response.addCookie(cookie);
         try (PrintWriter writer = response.getWriter();){
             writer.print("<html><body><h2>Time</h2>");
         writer.print("<br>");

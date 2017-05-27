@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+
 @WebFilter(filterName = "AdminFilter", urlPatterns = "/pages/admin/*")
 public class AdminFilter implements Filter {
     public void destroy() {
@@ -33,3 +34,4 @@ public class AdminFilter implements Filter {
     }
 
 }
+
