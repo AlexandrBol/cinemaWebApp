@@ -56,7 +56,5 @@ public class MovieServiceImpl implements Service<Integer, MovieDTO> {
 
     @Override
     public void update(MovieDTO entity) {
-
     }
-
 }

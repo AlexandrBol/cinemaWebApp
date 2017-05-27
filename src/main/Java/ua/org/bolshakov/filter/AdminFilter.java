@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
+
 @WebFilter(filterName = "AdminFilter", urlPatterns = "/pages/admin/*")
 public class AdminFilter implements Filter {
     public void destroy() {
     }
+
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
-        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
+
         UserDTO userDTO = (UserDTO) request.getSession().getAttribute("user");
         if (userDTO != null && userDTO.getRole().getName().equals("Admin")) {
             chain.doFilter(req, resp);
-            response.sendRedirect(request.getContextPath() + "/pages/admin/admin.jsp");
         } else {
             request.getSession().setAttribute("url", request.getRequestURI());
             request.getSession().setAttribute("message", "You have to be admin");
@@ -33,3 +34,4 @@ public class AdminFilter implements Filter {
     }
 
 }
+

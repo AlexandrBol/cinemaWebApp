@@ -28,7 +28,7 @@ public class UserDTO extends Entity<Integer> {
         this.role = roleDTO;
     }
 
-    public String getLogin() {
+        public String getLogin() {
             return login;
         }
 
@@ -84,11 +84,11 @@ public class UserDTO extends Entity<Integer> {
             this.birthday = birthday;
         }
 
-    public RoleDTO getRole() {
+        public RoleDTO getRole() {
         return role;
     }
 
-    public void setRole(RoleDTO role) {
+        public void setRole(RoleDTO role) {
         this.role = role;
     }
 

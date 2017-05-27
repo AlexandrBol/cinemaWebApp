@@ -3,13 +3,16 @@
 <html>
 <head>
     <title>All movies</title>
-
+    <jsp:include page="/pages/tmpl/headtag.jsp"/>
 </head>
 <body>
-<center>
+<jsp:include page="/pages/tmpl/head.jsp"/>
+
 <c:forEach items="${movieDTOList}" var="movies">
-<a href="${pageContext.servletContext.contextPath}/movie?id=${movies.id}">${movies.title}</a><br/>
-</c:forEach>
-</center>
+    <a href="${pageContext.servletContext.contextPath}/movie?id=${movies.id}">
+    <img src="<c:out value="${movies.poster}"/>" border="0" style="width: 250px; height: 350px;">
+    </a></c:forEach>
+
 </body>
+
 </html>

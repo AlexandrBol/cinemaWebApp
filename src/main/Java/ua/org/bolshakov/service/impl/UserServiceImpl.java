@@ -2,6 +2,7 @@ package ua.org.bolshakov.service.impl;
 
 import ua.org.bolshakov.dao.DaoFactory;
 import ua.org.bolshakov.dao.api.Dao;
+import ua.org.bolshakov.dto.MovieDTO;
 import ua.org.bolshakov.dto.UserDTO;
 import ua.org.bolshakov.mapper.BeanMapper;
 import ua.org.bolshakov.model.User;
@@ -62,4 +63,5 @@ public class UserServiceImpl implements Service<Integer, UserDTO> {
     public void update(UserDTO entity) {
 
     }
+
 }

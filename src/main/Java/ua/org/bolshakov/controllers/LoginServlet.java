@@ -16,26 +16,16 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         UserDTO userDTO = UserServiceImpl.getInstance().getByLogin(login);
-        request.getRequestDispatcher("pages/common/login.jsp").forward(request, response);
+
         if(userDTO != null && userDTO.getPassword().equals(password)){
             request.getSession().setAttribute("user", userDTO);
-            if(userDTO != null && userDTO.getRole().equals("Admin")){
-                response.sendRedirect(request.getContextPath() + "/pages/admin/admin.jsp");;
-
-            }
-            if(userDTO != null && userDTO.getRole().equals("User")){
-                response.sendRedirect(request.getContextPath() + "/pages/user/user.jsp");;
-
-            }
-        }
-        else{
+            response.sendRedirect(request.getSession().getAttribute("url").toString());
+        }else{
             request.getSession().setAttribute("message", "Wrong users name or password");
-            response.sendRedirect(request.getContextPath() + "/login");
+            response.sendRedirect(request.getContextPath() + "/pages/common/login.jsp");
         }
-
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doPost(request, response);
+        doPost(request, response);
     }
-
 }
