@@ -19,11 +19,12 @@ public class LoginServlet extends HttpServlet {
 
         if(userDTO != null && userDTO.getPassword().equals(password)){
             request.getSession().setAttribute("user", userDTO);
-            response.sendRedirect(request.getSession().getAttribute("url").toString());
         }else{
             request.getSession().setAttribute("message", "Wrong users name or password");
             response.sendRedirect(request.getContextPath() + "/pages/common/login.jsp");
         }
+
+
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request, response);
