@@ -47,7 +47,7 @@ public class TicketDaoImpl extends CrudDAO<Ticket> {
         Ticket ticket = null;
         while (resultSet.next()) {
             ticket = new Ticket();
-            ticket.setId(resultSet.getInt("id_ticket"));
+            ticket.setId(resultSet.getInt("id"));
             ticket.setPlaceID(resultSet.getInt("id_place"));
 
             result.add(ticket);

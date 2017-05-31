@@ -45,7 +45,7 @@ public class OrderDaoImpl extends CrudDAO<Order>{
         Order order = null;
         while (resultSet.next()) {
             order = new Order();
-            order.setId(resultSet.getInt("id_order"));
+            order.setId(resultSet.getInt("id"));
             order.setIdTicket(resultSet.getInt("id_ticket"));
             order.setIdUser(resultSet.getInt("id_user"));
             result.add(order);

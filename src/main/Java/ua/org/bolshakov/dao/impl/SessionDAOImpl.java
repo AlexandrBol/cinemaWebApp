@@ -46,7 +46,7 @@ public class SessionDAOImpl extends CrudDAO<Session> {
         Session session = null;
         while (resultSet.next()) {
             session = new Session();
-            session.setId(resultSet.getInt("id_session"));
+            session.setId(resultSet.getInt("id"));
             session.setMovieID(resultSet.getInt("movie_id"));
             session.setHallId(resultSet.getInt("hall_id"));
             session.setDateSession(resultSet.getDate("date_session").toLocalDate());

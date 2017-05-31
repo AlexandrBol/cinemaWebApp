@@ -49,7 +49,7 @@ public class PlaceDAOImpl  extends CrudDAO<Place> {
         Place place = null;
         while (resultSet.next()) {
             place = new Place();
-            place.setId(resultSet.getInt("place_id"));
+            place.setId(resultSet.getInt("id"));
             place.setSeat(resultSet.getInt("seat"));
             place.setRow(resultSet.getInt("row"));
             place.setStatus(resultSet.getBoolean("status"));

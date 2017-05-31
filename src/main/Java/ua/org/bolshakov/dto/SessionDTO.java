@@ -1,9 +1,11 @@
 package ua.org.bolshakov.dto;
 
 
+import ua.org.bolshakov.model.Entity;
+
 import java.time.LocalDate;
 
-public class SessionDTO {
+public class SessionDTO  extends Entity<Integer> {
 
     private int movieID;
     private int hallId;

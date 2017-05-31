@@ -15,7 +15,7 @@ public class SQLs {
     public static  final String INSERT_TICKET= "Insert into ticket (id_place = ? ) values (?)";
     public static  final String UPDATE_TICKET = "UPDATE ticket SET id_place = ?, WHERE id = ?";
 
-    public static  final String INSERT_SESSION= "Insert into session (movie_id = ? , hall_id = ? , date_session = ?) values (?,?,?)";
+    public static  final String INSERT_SESSION= "Insert into session (movie_id, hall_id , date_session) values (?,?,?)";
     public static  final String UPDATE_SESSION = "UPDATE session SET movie_id = ? , hall_id = ? , date_session = ?, WHERE id = ?";
 
     public static  final String INSERT_PLACE= "Insert into place (seat = ? , row= ? , status = ? , session_id = ? ) values (?,?,?,?)";

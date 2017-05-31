@@ -1,11 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alexandrbolshakov
-  Date: 5/30/17
-  Time: 15:34
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Add Session</title>
@@ -13,13 +7,25 @@
 </head>
 <body>
 <jsp:include page="/pages/tmpl/head.jsp"/>
-<c:out value="${sessionScope.message}"/>
-<form name="SessionForm" method="post" action="${pageContext.servletContext.contextPath}/addSession">
-    name: <input type="text" name="name"/> <br/>
-    price: <input type="text" name="price"/> <br/>
 
 
+
+<form name="SessionForm" method="post" action="${pageContext.servletContext.contextPath}/AddSession">
+    <select id="value" name="value">
+        <c:forEach items="${movieDTOList}" var="movies">
+            <option value="${movies.id}">${movies.title}</option>
+        </c:forEach>
+    </select>
+
+    <select id="value1" name="value1">
+        <c:forEach items="${hallDTOList}" var="hall">
+            <option value="${hall.id}">${hall.name}</option>
+        </c:forEach>
+    </select>
+
+    dateSession: <input type="dateSession" name="dateSession"/> <br/>
     <input type="submit" value="AddSession" />
 </form>
+
 </body>
 </html>

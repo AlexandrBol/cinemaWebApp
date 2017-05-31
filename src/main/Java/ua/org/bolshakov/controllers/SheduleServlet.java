@@ -14,25 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "MovieListServlet", urlPatterns={"/movies"})
-public class MovieListServlet extends HttpServlet {
+@WebServlet(name = "SheduleServlet", urlPatterns={"/Shedule"})
+public class SheduleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-
-        List<MovieDTO> movieDTOList = MovieServiceImpl.getInstance().getAll();
-        request.setAttribute("movieDTOList", movieDTOList);
-
-        List<HallDTO> hallDTOList = HallServiceImpl.getInstance().getAll();
-        request.setAttribute("hallDTOList", hallDTOList);
 
         List<SessionDTO> sessionDTOList = SessionServiceImpl.getInstance().getAll();
         request.setAttribute("sessionDTOList", sessionDTOList);
 
-        request.getRequestDispatcher("pages/common/movies.jsp").forward(request,response);
+        List<MovieDTO> movieDTOList = MovieServiceImpl.getInstance().getAll();
+        request.setAttribute("movieDTOList", movieDTOList);
+
+        request.getRequestDispatcher("pages/common/Shedule.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         doPost(request, response);
     }
 }
-
-

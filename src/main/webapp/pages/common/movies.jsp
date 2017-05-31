@@ -10,9 +10,8 @@
 
 <c:forEach items="${movieDTOList}" var="movies">
     <a href="${pageContext.servletContext.contextPath}/movie?id=${movies.id}">
-    <img src="<c:out value="${movies.poster}"/>" border="0" style="width: 250px; height: 350px;">
+        <img src="<c:out value="${movies.poster}"/>" border="0" style="width: 250px; height: 350px;">
     </a></c:forEach>
-
 </body>
 
 </html>
