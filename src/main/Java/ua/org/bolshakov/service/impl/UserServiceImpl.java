@@ -2,7 +2,6 @@ package ua.org.bolshakov.service.impl;
 
 import ua.org.bolshakov.dao.DaoFactory;
 import ua.org.bolshakov.dao.api.Dao;
-import ua.org.bolshakov.dto.MovieDTO;
 import ua.org.bolshakov.dto.UserDTO;
 import ua.org.bolshakov.mapper.BeanMapper;
 import ua.org.bolshakov.model.User;
@@ -56,12 +55,13 @@ public class UserServiceImpl implements Service<Integer, UserDTO> {
 
     @Override
     public void delete(Integer key) {
-
+        User user = userDao.getById(key);
     }
 
     @Override
-    public void update(UserDTO entity) {
-
+    public void update(UserDTO UserDTO) {
+        User user = beanMapper.singleMapper(UserDTO, User.class);
+        userDao.save(user);
     }
 
 }

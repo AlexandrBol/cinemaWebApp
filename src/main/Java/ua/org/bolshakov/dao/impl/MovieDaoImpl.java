@@ -1,17 +1,15 @@
 package ua.org.bolshakov.dao.impl;
 
 import ua.org.bolshakov.dao.api.Dao;
-import ua.org.bolshakov.dto.MovieDTO;
 import ua.org.bolshakov.model.Movie;
 
 import java.sql.*;
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.*;
 
 public final class MovieDaoImpl extends CrudDAO<Movie> {
-    private final String INSERT = "Insert into movie (title, description, duration, rent_start, rent_end, genre, rating, poster, video) values (?,?,?,?,?,?,?,?,?)";
-    private final String UPDATE = "UPDATE movie SET title = ?, description = ?, duration = ?, rent_start = ?, rent_end = ?, genre = ?, rating = ?,poster = ?, video = ?, WHERE id = ?";
+    private final String INSERT = SQLs.INSERT_MOVIE;
+    private final String UPDATE = SQLs.UPDATE_MOVIE;
     private static MovieDaoImpl crudDAO;
 
     public MovieDaoImpl(Class type) {
@@ -65,18 +63,29 @@ public final class MovieDaoImpl extends CrudDAO<Movie> {
 
     @Override
     public PreparedStatement createInsertStatement(Connection connection, Movie entity) throws SQLException {
-                PreparedStatement preparedStatement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
-                preparedStatement.setString(1, entity.getTitle());
-                preparedStatement.setLong(2, entity.getDuration());
-                preparedStatement.setString(3, entity.getDescription());
-                preparedStatement.setDate(4, Date.valueOf(entity.getRent_start()));
-                preparedStatement.setDate(5, Date.valueOf(entity.getRent_end()));
-                preparedStatement.setString(6,entity.getGenre());
-                preparedStatement.setInt(7,entity.getRate());
-                preparedStatement.setString(8,entity.getPoster());
-                preparedStatement.setString(9,entity.getVideo());
+        PreparedStatement preparedStatement = connection.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
+        preparedStatement.setString(1, entity.getTitle());
+        preparedStatement.setString(2, entity.getDescription());
+        preparedStatement.setLong(3, entity.getDuration());
+        preparedStatement.setDate(4, Date.valueOf(entity.getRent_start()));
+        preparedStatement.setDate(5, Date.valueOf(entity.getRent_end()));
+        preparedStatement.setString(6,entity.getGenre());
+        preparedStatement.setInt(7,entity.getRate());
+        preparedStatement.setString(8,entity.getPoster());
+        preparedStatement.setString(9,entity.getVideo());
 
         return preparedStatement;
     }
 
+    private void setStatement(Movie entity, PreparedStatement preparedStatement) throws SQLException {
+        preparedStatement.setString(1, entity.getTitle());
+        preparedStatement.setString(2, entity.getDescription());
+        preparedStatement.setLong(3, entity.getDuration());
+        preparedStatement.setDate(4, Date.valueOf(entity.getRent_start()));
+        preparedStatement.setDate(5,  Date.valueOf(entity.getRent_end()));
+        preparedStatement.setString(6, entity.getGenre());
+        preparedStatement.setInt(7, entity.getRate());
+        preparedStatement.setString(8, entity.getPoster());
+        preparedStatement.setString(9, entity.getVideo());
+    }
 }

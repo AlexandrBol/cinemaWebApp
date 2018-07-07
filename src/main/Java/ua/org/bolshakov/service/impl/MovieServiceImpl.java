@@ -55,6 +55,8 @@ public class MovieServiceImpl implements Service<Integer, MovieDTO> {
     }
 
     @Override
-    public void update(MovieDTO entity) {
+    public void update(MovieDTO movieDto) {
+        Movie movie = beanMapper.singleMapper(movieDto, Movie.class);
+        movieDao.save(movie);
     }
 }

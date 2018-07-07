@@ -1,9 +1,7 @@
 package ua.org.bolshakov.dao.api;
 
-import ua.org.bolshakov.dto.MovieDTO;
 import ua.org.bolshakov.model.Entity;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface Dao<K, T extends Entity<K>> {
